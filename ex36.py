@@ -9,26 +9,17 @@
 from PIL import Image
 
 
-def image_area(file_path):
+def image_area(image_path):
+    """
+        Image Path -> Number
+        count the number of pixels in an image
+        given: "J20-3.jpg" expected: 1920*1080
 
-    img = Image.open(file_path)
-    image_height = img.height
-    image_width = img.width
-    print(image_height * image_width)
-
-
-def image_classify(file_path):
-
-    img = Image.open(file_path)
-    image_height = img.height
-    image_width = img.width
-    if image_height > image_width:
-        print("tall")
-    elif image_width > image_height:
-        print("wide")
-    else:
-        print("square")
+    """
+    image = Image.open(image_path)
+    image_height = image.height
+    image_width = image.width
+    return image_height * image_width
 
 
-image_area("J20-3.jpg")
-image_classify("J20-3.jpg")
+print(image_area("J20-3.jpg"))
